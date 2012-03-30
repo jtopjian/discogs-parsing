@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 from BeautifulSoup import BeautifulSoup
 import requests
 import re

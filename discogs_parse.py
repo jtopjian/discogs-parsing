@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import xml.parsers.expat
 from collections import defaultdict
 import json
