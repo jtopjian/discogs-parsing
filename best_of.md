@@ -1,8 +1,8 @@
 How to Find the "Best Of" a style on Discogs
 ============================================
 
-1. Convert the masters XML file into JSON
-2. Create a dictionary of master_id: release_id values of the style(s) you want:
+* Convert the masters XML file into JSON
+* Create a dictionary of master_id: release_id values of the style(s) you want:
 
 <pre><code>
     import json
@@ -25,9 +25,9 @@ How to Find the "Best Of" a style on Discogs
     json.dump(id, w)
 </code></pre>
 
-3. Use `scrape.py` (edit the `IN_FILE` and `OUT_FILE` variables) to scrape discogs.com and get the rating and number of votes for each release.
+* Use `scrape.py` (edit the `IN_FILE` and `OUT_FILE` variables) to scrape discogs.com and get the rating and number of votes for each release.
 
-4. Parse the resulting data:
+* Parse the resulting data:
 
 <pre><code>
     import json
@@ -53,4 +53,4 @@ How to Find the "Best Of" a style on Discogs
     f3.close()
 </code></pre>
 
-5. `out.txt` will now have a sorted list of the best voted albums of a particular style.
+* `out.txt` will now have a sorted list of the best voted albums of a particular style.
