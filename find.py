@@ -1,5 +1,6 @@
 import sys
 import json
+import utils
 search = []
 
 if len(sys.argv) < 2:
@@ -14,23 +15,16 @@ else:
 f = open('data.json')
 data = json.load(f)
 
-for k in data:
-    to_print = 1
-    curr_data = data[k]
+results = utils.style_search(data, search)
+
+for r in results:
+    curr_data = data[r]
     name = curr_data.get('name', ['none'])[0]
     title = curr_data.get('title',['none'])[0]
     genre = curr_data.get('genre',['none'])
     style = curr_data.get('style',['none'])
 
-    if style[0] == 'none':
-        continue
-
     output = "%s: %s:\n" % (name.encode('ascii','ignore'), title.encode('ascii','ignore'))
     output += "    %s\n" % ', '.join(genre).encode('ascii','ignore')
-    for s in search:
-        if s not in [x.lower() for x in style]:
-            to_print = 0
     output += "    %s\n" % ', '.join(style).encode('ascii','ignore')
-
-    if to_print:
-        print output
+    print output

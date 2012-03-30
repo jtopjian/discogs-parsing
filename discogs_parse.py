@@ -8,7 +8,7 @@ data = defaultdict(dict)
 curr_id = 0
 curr_tag = None
 curr_value = ""
-useful_tags = ['artist', 'name', 'genre', 'year', 'style', 'title']
+useful_tags = ['artist', 'name', 'genre', 'year', 'style', 'title', 'main_release']
 
 def start_element(name, attrs):
     global curr_id, curr_tag, data
