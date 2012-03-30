@@ -39,7 +39,7 @@ How to Find the "Best Of" a style on Discogs
     # Limit results to releases with 10 or more votes
     data2 = copy.deepcopy(data)
     for k in data:
-        if int(data[k]['count']) < 10:
+        if int(data[k]['count']) &lt; 10:
             del(data2[k])
     x = sorted(data2.iteritems(), key=lambda (k,v): (v['rating'], k))
     x.reverse()
